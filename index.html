@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💜</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#ffffff;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* SLIDE */
+.slide{
+display:none;
+width:100%;
+max-width:420px;
+padding:16px;
+}
+.slide.active{display:block}
+
+/* IMAGE 3:2 */
+.image-box{
+width:100%;
+aspect-ratio:3/2;
+background:white #eee;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+.image-box img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* BUTTONS */
+.buttons{
+margin-top:16px;
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+button{
+padding:14px;
+border:none;
+border-radius:16px;
+font-size:16px;
+cursor:pointer;
+transition:.25s;
+}
+
+button:hover{transform:scale(1.03)}
+
+.primary{
+background:#c084fc;
+color:white;
+}
+.secondary{
+background:#f3e8ff;
+color:#5b21b6;
+}
+
+/* ENVELOPE */
+.envelope{
+cursor:pointer;
+animation:bounce 1.5s infinite;
+}
+@keyframes bounce{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-8px)}
+}
+</style>
+</head>
+
+<body>
+
+<!-- SLIDE 0 -->
+<div class="slide active" id="s0">
+  <div class="image-box envelope" onclick="go('s1')">
+    <img src="Picsart_26-02-07_15-37-45-737.jpg">
+  </div>
+</div>
+
+<!-- SLIDE 1 -->
+<div class="slide" id="s1">
+  <div class="image-box">
+    <img src="Picsart_26-02-07_03-09-00-909.jpg">
+  </div>
+  <div class="buttons">
+    <button class="primary" onclick="go('s2')">open</button>
+  </div>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide" id="s2">
+  <div class="image-box">
+    <img src="Picsart_26-02-07_03-33-12-766.jpg">
+  </div>
+  <div class="buttons">
+    <button class="primary" onclick="go('s3')">continue</button>
+  </div>
+</div>
+
+<!-- VALENTINE -->
+<div class="slide" id="s3">
+  <div class="image-box">
+    <img src="Picsart_26-02-07_03-43-35-773.jpg">
+  </div>
+  <div class="buttons">
+    <button class="primary" onclick="go('s4')">yes</button>
+    <button class="secondary" onclick="go('s3a')">no</button>
+  </div>
+</div>
+
+<!-- NO -->
+<div class="slide" id="s3a">
+  <div class="image-box">
+    <img src="Picsart_26-02-07_03-48-36-003.jpg">
+  </div>
+  <div class="buttons">
+    <button class="primary" onclick="go('s3')">another chance</button>
+  </div>
+</div>
+
+<!-- YES -->
+<div class="slide" id="s4">
+  <div class="image-box">
+    <img src="Picsart_26-02-07_04-00-27-137.jpg">
+  </div>
+  <div class="buttons">
+    <button class="primary" onclick="go('s5')">continue</button>
+  </div>
+</div>
+
+<!-- OPTIONS -->
+<div class="slide" id="s5">
+  <div class="image-box">
+    <img src="Picsart_26-02-07_13-02-39-339.jpg">
+  </div>
+  <div class="buttons">
+    <button class="secondary" onclick="go('s6')">click me</button>
+    <button class="secondary" onclick="go('s7')">our plan</button>
+    <button class="primary" onclick="go('s8')">continue</button>
+  </div>
+</div>
+
+<!-- DRESS -->
+<div class="slide" id="s6">
+  <div class="image-box">
+    <img src="Picsart_26-02-07_13-25-30-838.jpg">
+  </div>
+  <div class="buttons">
+    <button class="primary" onclick="go('s5')">back</button>
+  </div>
+</div>
+
+<!-- PLAN -->
+<div class="slide" id="s7">
+  <div class="image-box">
+    <img src="Picsart_26-02-07_14-45-29-708.jpg">
+  </div>
+  <div class="buttons">
+    <button class="primary" onclick="go('s5')">back</button>
+  </div>
+</div>
+
+<!-- FINAL -->
+<div class="slide" id="s8">
+  <div class="image-box">
+    <img src="Picsart_26-02-07_14-53-52-906.jpg">
+  </div>
+  <div class="buttons">
+    <button class="primary" onclick="go('s0')">home</button>
+  </div>
+</div>
+
+<script>
+function go(id){
+document.querySelectorAll('.slide').forEach(slide=>{
+  slide.classList.remove('active');
+});
+document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
